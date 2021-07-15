@@ -1,0 +1,112 @@
+.myCover {
+    background-image: url(../img/cover.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    .container {
+        position: relative;
+        height: 100%;
+    }
+    .cover_content {
+        position: absolute;
+        top: 30%;
+        left: -2%;
+        width: 450px;
+    }
+    h1 {
+        @include styleText($color-white-0, $fs-4, $fw-bold);
+    }
+    p {
+        @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+    }
+    .input {
+        .form-control {
+            border-radius: 0;
+            border: none;
+            font-size: 20px;
+            height: 50px;
+            padding: 11px 17px;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            // sửa lỗi bootstrap phần gạch dưới và gạch đứng
+            background-clip: border-box;
+            &::placeholder {
+                @include styleText($color-gray-4, $fs-2, 100);
+            }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        .input-group-prepend {
+            .input-group-text {
+                background-color: $color-white-0;
+                color: $color-red-0;
+                border: none;
+                padding: 11px 14px;
+                font-size: 20px;
+                width: 50px;
+                height: 50px;
+                border-bottom-right-radius: 2px;
+                border-top-right-radius: 2px;
+                // sửa lỗi bootstrap phần gạch dưới và gạch đứng
+                background-clip: border-box;
+                i {
+                    padding-left: 3.6px;
+                }
+            }
+            &:hover {
+                .input-group-text {
+                    background-color: $color-red-0;
+                    color: $color-white-0;
+                }
+            }
+        }
+    }
+}
+// reponsive
+.myCover {
+    @include responsiveMax("large") {
+        .cover_content {
+            width: 370px;
+            left: 0;
+        }
+    }
+    @include responsiveMax("small") {
+        height: 300px;
+        .cover_content {
+            position: static;
+            left: 0;
+            padding-top: 10%;
+            width: 100%;
+        }
+        h1 {
+            @include styleText($color-white-0, $fs-3, $fw-normal);
+            width: 50%;
+        }
+        p {
+            @include styleText($color-white-0, $fs-2 - 2, $fw-normal);
+            width: 55%;
+            margin-bottom: 15px;
+        }
+        .input {
+            .form-control {
+                height: 45px;
+                padding: 9px 11px;
+                &::placeholder {
+                    @include styleText($color-gray-4, $fs-0 + 1, 100);
+                }
+            }
+            .input-group-prepend {
+                .input-group-text {
+                    font-size: 18px;
+                    height: 45px;
+                    padding: 9px 11px;
+                    i {
+                        padding-left: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

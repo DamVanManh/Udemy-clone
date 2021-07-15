@@ -1,0 +1,39 @@
+//Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Vendor
+//code của thư viện
+
+
+//Base
+@import './Base/reset';
+@import './Base/customize';
+@import './Base/normalized';
+
+//Components
+@import './Components/button';
+
+//Layouts
+@import './Layouts/header';
+@import './Layouts/cover';
+@import './Layouts/intro';
+@import './Layouts/courses';
+@import './Layouts/experiment';
+@import './Layouts/student';
+@import './Layouts/banner';
+@import './Layouts/categories';
+
+// @import './Layouts/background';
+@import './Layouts/contact';
+// @import './Layouts/background';
+@import './Layouts/feedback';
+@import './Layouts/footer';
+@import './Layouts/partners';
+@import './Layouts/wrapper';
+
+// Page
+//code riêng cho 1 trang cụ thể
+
+//Theme
+//dark

@@ -1,0 +1,97 @@
+.myCourse {
+    margin-top: $mg-2;
+    .course_content {
+        .course_left {
+            margin: 15px 0px 28px;
+            padding: 0px 32px;
+            background: rgb(247, 248, 250);
+            position: relative;
+            .course_intro {
+                position: absolute;
+                left: 10%;
+                right: 10%;
+                top: 50%;
+                transform: translateY(-50%);
+                h2 {
+                    @include styleText($color-black-0, $fs-2 - 1, $fw-bold-1);
+                }
+            }
+        }
+        .myTab {
+            .nav {
+                border: none;
+                .nav-item {
+                    &:hover {
+                        .nav-link {
+                            border: none;
+                            color: $color-blue;
+                        }
+                    }
+                    .nav-link.active {
+                        border: none;
+                        border-bottom: 5px solid $color-blue;
+                    }
+                    .nav-link {
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                        // bỏ hover vào bị rung rinh chữ
+                        border: none;
+                        padding: 11px 12px;
+                    }
+                }
+            }
+            .tab-content {
+                margin-top: $mg-1 + 6;
+                // set vị trí nút pre next
+                position: relative;
+                .card-img-overlay {
+                    // sửa lỗi nội dung chữ lồng vào hình
+                    position: static;
+                    padding-bottom: 12px;
+                    .card-title {
+                        @include styleText($color-black-0, $fs-0, $fw-bold);
+                    }
+                    .card-text {
+                        @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+                    }
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 5px;
+                        .rating_star {
+                            @include styleText($color-yellow, $fs-1 - 1, $fw-normal);
+                            margin-right: $mg-0;
+                        }
+                        span:nth-child(2) {
+                            @include styleText($color-black-light, $fs-1, $fw-bold);
+                            margin-right: $mg-0;
+                        }
+                        span:last-child {
+                            @include styleText($color-gray-4, $fs-1 - 1, $fw-normal);
+                        }
+                    }
+                    .price {
+                        text-align: right;
+                        .old-price {
+                            @include styleText($color-gray-4, $fs-1, $fw-normal);
+                            text-decoration: line-through;
+                        }
+                        .new-price {
+                            @include styleText($color-black-0, $fs-2 - 2, $fw-bold);
+                        }
+                    }
+                }
+                //hover vào thì đổ bóng card.item
+                .card.item {
+                    box-shadow: none;
+                    transition: all 0.2s;
+                    box-shadow: 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                    margin-bottom: 10px;
+                }
+                .card.item:hover {
+                    box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15);
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,28 @@
+.myIntro {
+  background: linear-gradient(to right, $color-purple, $color-red-0);
+  .intro_content {
+    padding: ($pd-1 - 4) 0;
+    .intro_item {
+      justify-content: center;
+      .icon {
+        @include styleText($color-white-0, 45px, $fw-bold);
+        margin-right: $mg-2;
+      }
+      .icon_content {
+        padding-top: $pd-1;
+        p:first-child {
+          @include styleText($color-white-0, $fs-0 + 2, $fw-bold);
+          margin-bottom: 0;
+        }
+        p:last-child {
+          @include styleText($color-white-0, $fs-0, $fw-normal);
+        }
+      }
+    }
+  }
+}
+// reponsive
+// chỉ hiện icon khi từ 1200px trở lên: icon d-none d-xl-block
+// chỉ hiện myIntro khi từ 768px trở lên: myIntro d-none d-md-block
+// chỉ căn trái text icon_content khi từ 1200px trở lên, còn lại căn giữa: icon_content text-center text-xl-left
+// từ 1200px trở lên padding col-md-4 bằng 0: col-md-4 px-xl-0

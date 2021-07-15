@@ -1,0 +1,105 @@
+.contact {
+    .row {
+        max-width: 1440px;
+        margin: 40px 0px 30px;
+        .links {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 110px;
+            list-style: none;
+            .list__contact {
+                flex: 25%;
+                .footer__links {
+                    @include styleText($color-blue, $fs-1, $fw-normal);
+                    background-color: transparent;
+                    &:hover {
+                        color: #003845;
+                        text-decoration: none;
+                    }
+                }
+                .bold {
+                    @include styleText($color-blue, $fs-1, $fw-bold-1);
+                    background-color: transparent;
+                    &:hover {
+                        color: #003845;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .flex_right {
+            // căn cho các thành phần con là button nằm bên trái
+            // text-align: right;
+            .dropdown {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                text-align: center;
+                text-align: right;
+                // chỉnh botton
+                .dropdown-toggle {
+
+                    color: #29303b;
+                    background-color: #ffffff;
+                    border-color: #29303b;
+                    outline: none;
+                    background-color: transparent;
+                    box-shadow: none;
+                    padding: 6px 25px;
+                    border-radius: 2px;
+                    font-size: 13px;
+                    font-weight: 700 !important;
+                    line-height: 18px;
+                    min-width: 160px;
+                    text-align: left;
+                    width: 100%;
+                    // căn kích thước
+                    padding-bottom: 9px;
+                    padding-top: 9px;
+                    padding-right: 33px;
+                    margin-bottom: 0;
+                    font-weight: 700;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    // khi chưa hover
+                    color: #686f7a;
+                    background-color: #fff;
+                    border: 1px solid #686f7a;
+                    transition: all 0s;
+                    @include styleText($color-gray-4, $fs-1, $fw-normal);
+                    .fa-globe-africa {
+                        padding-right: $pd-1;
+                    }
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                    &:hover {
+                        color: #29303b;
+                        background-color: #fff;
+                        border-color: #29303b;
+                    }
+                    // chỉnh mũi tên bên trong button
+                    .dropdown-caret{
+                        color: #686f7a;
+                        font-size: 14px;
+                        padding-top: 3px;
+                        padding-right: 2px;
+                    }
+                }
+                //biểu tượng mũi tên cũ của bootstrap ẩn đi
+                .dropdown-toggle::after {
+                    content: "";
+                    margin: 7px 0 0 30px;
+                    transition: all 0.5s;
+                    visibility: hidden;
+                }
+                // đổ bóng ở cái drop menu
+                .dropdown-menu {
+                    box-shadow: 0 4px 16px rgba(20,23,28,.25);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.partners {
+    padding-bottom: 24px;
+    @include responsiveMax("medium"){
+        width: 300px !important;
+        max-width: 300px;
+    }
+    .partners__text {
+        @include styleText($color-gray-4, $fs-1, $fw-normal);
+        text-align: center;
+        padding-top: 16px;
+    }
+    .logos {
+        .partners__logos {
+            padding-top: 32px;
+            .logo-item {
+                margin: 0 32px 8px;
+            }
+        }
+    }
+}

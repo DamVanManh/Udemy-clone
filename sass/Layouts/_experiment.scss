@@ -1,0 +1,114 @@
+.experiment {
+    background-color: $color-white-cream;
+    // cách trên dưới các nội dung bên trong
+    padding-top: $fs-3;
+    padding-bottom: 0;
+    @include responsiveMin("medium") {
+        padding-bottom: $fs-3;
+    }
+
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+        @include responsiveMin("large") {
+            padding-left: 15px;
+        }
+        @media screen and (min-width: 576px) and (max-width: 768px){
+            width: 1005px;
+        }
+        .experiment-content {
+            // thêm display: flex sửa lỗi height item không đều nhau vì owl carousel dùng float left
+            .owl-stage {
+                display: flex !important;
+                .owl-item.active {
+                    display: flex !important;
+                }
+            }
+            .experiment-item {
+                display: flex;
+                // xuống hàng khi tràn
+                flex-wrap: wrap;
+                // khoảng cách giữa các con
+                margin: 0 16px 0 0;
+                // cho nội dung vào giữa
+                padding: 24px;
+                @include responsiveMax("large") {
+                    padding: 16px;
+                }
+                // khi màn hình nhỏ chỉnh các width bằng nhau
+                @include responsiveMax("small") {
+                    width: 685px;
+                    margin: 0 0 0 0;
+                }
+                
+                background-color: $color-white-0;
+                border: 1px solid #e8e9eb;
+                border-radius: 2px;
+                .logo {
+                    // cho hình không đổi kích thước
+                    img {
+                        width: 42px;
+                        // lớn hơn large thì căn bằng % flex
+                        @include responsiveMax("large") {
+                            margin: 0px auto;
+                        }
+                    }
+                    // bỏ padding boosttrap
+                    padding: 0;
+                    // chia % giữa logo và text
+                    flex: 19%;
+                    @include responsiveMax("extra-large") {
+                        float: 25%;
+                    }
+                    @include responsiveMax("large") {
+                        flex: 100%;
+                    }
+                }
+                .text {
+                    text-align: left;
+                    @include responsiveMax("large") {
+                        text-align: center;
+                    }
+                    // bỏ padding boosttrap
+                    padding: 0;
+                    // khoảng cách giữa logo và text
+                    flex: 81%;
+                    @include responsiveMax("extra-large") {
+                        flex: 75%;
+                    }
+                    @include responsiveMax("large") {
+                        flex: 100%;
+                    }
+                }
+                h4 {
+                    @include styleText($color-black-0, 19px, $fw-bold-1);
+                }
+                p {
+                    @include styleText($color-gray-4, 16px, 400);
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+// chỉnh dots nhỏ lại
+.experiment {
+    .owl-theme .owl-dots .owl-dot span {
+        width: 5px;
+        height: 5px;
+    }
+}
+
+
+.experiment {
+    .owl-theme .owl-dots .owl-dot:hover span {
+        border: 2px solid #686f7a;
+    }
+}
+// dot khi active: nằm dưới cùng để không bị các hiệu ứng  trên đè
+.experiment {
+    .owl-theme .owl-dots .owl-dot.active span {
+        border: 2px solid $color-gray-4;
+    
+    }
+}

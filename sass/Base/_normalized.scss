@@ -1,0 +1,56 @@
+//owl carousel
+// chỉnh nút bấm next prev cho 
+.owl-prev,.owl-next{
+    position: absolute;
+    top: 33%;
+    left: -3%;
+    width: 47px;
+    height: 47px;
+    border-radius: 50% !important;
+    background-color: $color-white-0 !important;
+    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
+    span{
+        @include styleText($color-blue,$fs-4,$fw-normal);
+        line-height: 0.7;
+    }
+    &:hover{
+        box-shadow: 0 2px 8px 2px rgba(20,23,28,.15);
+    }
+    &:focus{
+        outline: none;
+    }
+}
+.owl-next{
+    left: unset;
+    right: -3%;
+}
+// ẩn khi mới bắt đầu hoặc đã kết thúc danh sách: cần code loop: false, trong script owl carousel
+.owl-next.disabled,.owl-prev.disabled{
+    visibility: hidden;
+}
+// bỏ outline của dots khi click vào
+button.owl-dot.active,button.owl-dot{
+    outline: none;
+}
+
+// dots khi không hover hoặc focus
+.owl-theme .owl-dots .owl-dot span {
+    background-clip: border-box;
+    border-radius: 50%;
+    border: 0px solid #dedfe0;
+    transition: opacity 0s ease;
+    background: #dedfe0;
+}
+// dots khi hover hoặc focus
+// , .owl-theme .owl-dots .owl-dot:focus span 
+.owl-theme .owl-dots .owl-dot:hover span {
+    border: 2px solid #686f7a;
+    background: #dedfe0;
+    transition: all 0.3s;
+}
+// dot khi active: nằm dưới cùng để không bị các hiệu ứng  trên đè
+.owl-theme .owl-dots .owl-dot.active span {
+    background-color: $color-gray-4;
+    border: 2px solid $color-gray-4;
+
+}

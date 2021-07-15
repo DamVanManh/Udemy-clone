@@ -1,0 +1,77 @@
+.myBanner {
+    .banner_content {
+        .top_border {
+            background: linear-gradient(-45deg, #ec5252 0%, #6e1a52 100%);
+            height: 8px;
+        }
+        .banner_body {
+            background-color: #29303b;
+            color: #f7f8fa;
+            height: 360px;
+            // style thẻ y
+            i {
+                font-size: 32px;
+                color: $color-gray-5;
+            }
+            .top {
+                padding-bottom: 32px;
+                padding-top: 48px;
+                // khi các icon ẩn đi thì đẩy nội dung xuống thêm một chút
+                @media screen and (min-width:640px) and (max-width:991px) {
+                    padding-top: 65px;
+                }
+            }
+            .between {
+                // căn chiều dọc
+                align-items: center;
+                .text-left {
+                    padding-left: 0px;
+                    i {
+                        padding-left: 20%;
+                    }
+                }
+                .text-center{
+                    
+                    .banner_title{
+                        @include styleText($color-gray-5,$fs-3,$fw-bold-1);
+                        margin: 0 0 16px;
+                        @media screen and (max-width:639px) {
+                            // width: 50%;
+                            max-width: 50%;
+                            margin: 0 auto;
+                            margin-bottom: 16px;
+                        }
+                    }
+                    .banner__subtitle{
+                        @include styleText($color-gray-5,$fs-0,$fw-normal);
+                        margin: 0 0 24px;
+                        @media screen and (max-width:639px) {
+                            // width: 100%;
+                            // max-width: 50%;
+                            margin: 0 auto;
+                            margin-bottom: 24px;
+                        }
+                    }
+                    // bỏ bootstrap
+                    button:focus{
+                        outline: none;
+                    }
+                    
+                }
+                .text-right {
+                    padding-right: 0px;
+                    i {
+                        padding-right: 20%;
+                    }
+                }
+            }
+            .bottom{
+                padding-bottom: 32px;
+                padding-top: 48px;
+            }
+        }
+    }
+}
+// reponsive
+// thêm d-none d-lg-block vào các icon để ẩn đi khi dưới 992px
+// căn lại trung tâm text col-12 col-lg-6 text-center

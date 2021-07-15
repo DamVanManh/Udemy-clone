@@ -1,0 +1,145 @@
+header {
+    .navbar {
+        @include styleText($color-black-light, $fs-1, $fw-normal);
+        .nav-link {
+            @include styleText($color-black-light, $fs-1, $fw-normal);
+        }
+    }
+    .navbar-toggler {
+        color: $color-gray-4;
+        &:focus {
+            outline: none;
+        }
+    }
+    .business,
+    .teach,
+    .header__categories {
+        border: 1px solid white;
+    }
+    .business:hover,
+    .teach:hover,
+    .header__categories:hover {
+        @include itemsHover($color-white-cream, $color-gray-6);
+    }
+    .header__categories {
+        padding: 12px 15px;
+    }
+    .header__form .input-group {
+        margin-top: 5px;
+    }
+    .div_right_row {
+        padding-left: 0px;
+    }
+    .div_left_row {
+        padding-right: 0px;
+    }
+}
+.header__left {
+    display: flex;
+    // flex-grow
+    .navbar-brand {
+        img {
+            width: 110px;
+        }
+    }
+    .header__categories {
+        margin: 0 10px;
+        align-self: center;
+    }
+    .header__form {
+        flex-grow: 1;
+    }
+}
+.header__right {
+    display: flex;
+    .nav-link {
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+    .header-right-divider {
+        height: 90%;
+        border-left: 1px solid #dedfe0;
+        margin: 0 8px;
+    }
+    .nav-item {
+        margin: unset auto;
+    }
+    .nav-link .fa-shopping-cart {
+        font-size: 18px;
+        height: 40px;
+        width: 40px;
+        border: 1px solid $color-white-0;
+        background-color: $color-white-0;
+        line-height: 40px;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .nav-link.mr-md-2 {
+        padding: 0;
+    }
+    .nav-link .fa-shopping-cart:hover {
+        background-color: $color-white-cream;
+        border-color: $color-gray-6;
+    }
+}
+.navbar {
+    padding: 0.5rem 0;
+}
+
+//Responsive
+.header__right {
+    //nhỏ hơn hoặc bằng 1200 thì ẩn hai dòng chữ
+    @include responsiveMax("extra-large") {
+        .business,
+        .teach {
+            display: none;
+        }
+    }
+    // nhỏ hơn hoặc bằng 768 thì ẩn button
+    @include responsiveMax("medium_navfix") {
+        //code sẽ được gắn vào vị trí của @content
+        .udebtn-group {
+            display: none;
+        }
+    }
+}
+
+.header__left {
+    // nhỏ hơn hoặc bằng 768 thì ẩn categories và form
+    @include responsiveMax("medium_navfix") {
+        justify-content: center;
+        .header__categories,
+        .header__form {
+            display: none;
+        }
+    }
+}
+// resetbootstrap
+@media screen and (min-width: 576px) {
+    header {
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    header {
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (min-width: 992px) {
+    header {
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
+    header {
+        .container {
+            max-width: 1300px;
+        }
+    }
+}

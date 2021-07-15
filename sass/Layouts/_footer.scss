@@ -1,0 +1,45 @@
+.hr1 {
+    border-top: 1px solid #e8e9eb;
+    margin: 0px;
+}
+.hr-primary {
+    border-top: 6px solid #ec5252;
+}
+.footer__bottom {
+    .footer_content {
+        margin: 20px 0;
+        padding: 0 20px;
+        @include responsiveMin("medium") {
+            margin: 30px auto;
+        }
+        .left__bot {
+            .logo {
+                width: 110px;
+                height: auto;
+            }
+            .copy__right {
+                @include styleText($color-gray-4, $fs-1, $fw-normal);
+            }
+        }
+        .right__bot {
+            .links {
+                // text-align: right;
+                margin-bottom: 0;
+                .list {
+                    // cho li nằm 1 hàng
+                    display: inline;
+                    // cách các chữ ra\
+                    padding: 6px;
+                    .get {
+                        @include styleText($color-blue, $fs-1, $fw-normal);
+                        // line-height: 18px;
+                        &:hover {
+                            color: #003845;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

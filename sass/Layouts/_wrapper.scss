@@ -1,0 +1,115 @@
+.wrapper {
+    background-color: $color-gray-5;
+    .wrapper_content {
+        display: flex;
+        flex-wrap: wrap;
+        .instructor {
+            display: flex;
+            justify-content: center;
+            border-bottom: none;
+            border-right: none;
+                @include responsiveMin("medium"){
+                    border-right: 1px solid #dedfe0;
+                }
+            .instructor__text {
+                max-width: 400px;
+                text-align: center;
+                padding: 28px 30px;
+                
+                .instructor__header {
+                    padding-top: 3px;
+                    .ins__a {
+                        @include styleText($color-black-light, $fs-2 - 1, $fw-bold-1);
+                        text-decoration: none;
+                        background-color: transparent;
+                    }
+                }
+                .instructor__content {
+                    @include styleText($color-black-0, $fs-0 + 1, 300);
+                }
+                .instructor__link {
+                    
+                    .btn {
+                        display: inline-block;
+                        text-align: center;
+                        vertical-align: middle;
+                        @include styleText($color-white-0, $fs-0, $fw-bold-1);
+                        background-color: #ec5252;
+                        border: 1px solid transparent;
+                        white-space: nowrap;
+                        padding: 11px 12px;
+                        border-radius: 2px;
+                        line-height: 1.35135;
+                        &:hover {
+                            color: #fff;
+                            background-color: #992337;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+        .business {
+            display: flex;
+            // flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            padding: 28px 30px;
+            .business__text {
+                max-width: 400px;
+                text-align: center;
+                .business__header {
+                    padding-top: 3px;
+                    .bus__a {
+                        @include styleText($color-black-light, $fs-2 - 1, $fw-bold-1);
+                        text-decoration: none;
+                        background-color: transparent;
+                    }
+                }
+                .business__content {
+                    @include styleText($color-black-0, $fs-0 + 1, 300);
+                }
+                .business__link {
+                    margin-top: 18px;
+                    @include responsiveMin("medium"){
+                        margin-top: 20px;
+                    }
+                    .btn {
+                        display: inline-block;
+                        text-align: center;
+                        vertical-align: middle;
+                        @include styleText($color-white-0, $fs-0, $fw-bold-1);
+                        background-color: #ec5252;
+                        border: 1px solid transparent;
+                        white-space: nowrap;
+                        padding: 11px 12px;
+                        border-radius: 2px;
+                        line-height: 1.35135;
+                        &:hover {
+                            color: #fff;
+                            background-color: #992337;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+        //768px
+        @include responsiveMin("medium") {
+            //code sẽ được gắn vào vị trí của @content
+            .instructor {
+                justify-content: center;
+                flex-grow: 1;
+                display: flex;
+                margin: 36px 0 22px;
+            }
+            .business {
+                justify-content: center;
+                flex-grow: 1;
+                display: flex;
+                // padding: 36px 79px 22px;
+                margin: 36px 0 22px;
+            }
+        }
+    }
+}
